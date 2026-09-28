@@ -55,7 +55,7 @@
         </div>
       </a>
 
-      <!-- Desktop & Mobile Navigation Menu -->
+      <!-- Desktop & Mobile Navigation Menu (Media removed per IA clean-up) -->
       <nav aria-label="Main Navigation">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#about" class="nav-link">About</a></li>
@@ -64,14 +64,13 @@
           <li><a href="#teaching-approach" class="nav-link">Teaching Approach</a></li>
           <li><a href="#program-formats" class="nav-link">Program Formats</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#gallery" class="nav-link">Media</a></li>
           <li><a href="#partnerships" class="nav-link">School Partnerships</a></li>
         </ul>
       </nav>
 
       <!-- Action Utilities -->
       <div class="nav-actions">
-        <!-- Ambient Movement Audio Toggle -->
+        <!-- Ambient Movement Audio Toggle (Commented out per site clean-up, underlying audio.js preserved)
         <button class="ambient-toggle" id="ambient-toggle" title="Toggle Ambient Movement Soundscape" aria-label="Toggle Movement Soundscape">
           <div class="ambient-bars">
             <span class="ambient-bar"></span>
@@ -81,6 +80,7 @@
           </div>
           <span id="ambient-label">Sound</span>
         </button>
+        -->
 
         <!-- Instagram Social Link -->
         <a href="https://www.instagram.com/ms.phebe718" target="_blank" rel="noopener noreferrer" class="theme-toggle" title="Follow @ms.phebe718 on Instagram" aria-label="Instagram Profile" style="text-decoration:none;">
@@ -95,10 +95,10 @@
         </button>
 
         <!-- Primary Header CTA -->
-        <a href="#contact" class="btn btn-primary btn-sm">Bring Dance to Your School</a>
+        <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire About Programs">Inquire About Programs</a>
 
         <!-- Mobile Hamburger Button -->
-        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Menu">☰</button>
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Navigation Menu">☰</button>
       </div>
     </div>
   </header>
@@ -139,18 +139,15 @@
           Phe-be provides engaging dance education for children and youth through schools, after-school programs, community organizations, workshops, residencies, and enrichment programming.
         </p>
 
-        <!-- Action CTAs -->
+        <!-- Clear, Singular Primary Conversion CTA -->
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary btn-lg">Bring Dance to Your School</a>
-          <a href="#programs" class="btn btn-secondary btn-lg">Explore Programs</a>
-          <button class="btn-reel" id="btn-hero-reel" aria-label="Watch Teaching and Choreography Showreel">
-            <div class="reel-icon-ring">▶</div>
-            <span>Watch Showreel</span>
-          </button>
+          <a href="#contact" class="btn btn-primary btn-lg" aria-label="Inquire About Programs">Inquire About Programs</a>
         </div>
 
-        <div style="margin-top: -30px; margin-bottom: 40px;">
-          <a href="#about" class="nav-link" style="font-size: 0.95rem; color: var(--text-muted); text-decoration: underline;">Meet Phe-be & Explore Her Teaching Background ↓</a>
+        <div class="hero-sub-links">
+          <a href="#programs" class="hero-sub-link">Explore Programs ↓</a>
+          <span class="hero-sub-divider">•</span>
+          <a href="#about" class="hero-sub-link">Meet Phe-be ↓</a>
         </div>
 
         <!-- Kinetic Highlights Bar -->
@@ -251,7 +248,6 @@
             <div class="program-media">
               <img src="assets/images/earlychildhood.jpg" alt="Creative Movement and Early Childhood Dance" class="program-img">
               <span class="program-age-tag">Ages 2 – 7 • Pre-K–2</span>
-              <button class="program-play-pill" data-title="Creative Movement" data-img="assets/images/earlychildhood.jpg" data-cat="Early Childhood">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Creative Movement & Early Childhood Dance</h3>
@@ -272,7 +268,6 @@
             <div class="program-media">
               <img src="assets/images/ballet.jpg" alt="Ballet Dance Class" class="program-img">
               <span class="program-age-tag">Grades K–12 • Beginner–Intermediate</span>
-              <button class="program-play-pill" data-title="Ballet Foundations" data-img="assets/images/ballet.jpg" data-cat="Ballet">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Ballet</h3>
@@ -293,7 +288,6 @@
             <div class="program-media">
               <img src="assets/images/hiphop.jpg" alt="Hip Hop Dance Class" class="program-img">
               <span class="program-age-tag">Grades 3–12 • Beginner–Intermediate</span>
-              <button class="program-play-pill" data-title="Hip-Hop" data-img="assets/images/hiphop.jpg" data-cat="Hip-Hop">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Hip-Hop</h3>
@@ -314,7 +308,6 @@
             <div class="program-media">
               <img src="assets/images/teaching.jpg" alt="Jazz and Street Jazz Dance" class="program-img">
               <span class="program-age-tag">Grades 3–12 • Beginner–Intermediate</span>
-              <button class="program-play-pill" data-title="Jazz & Street Jazz" data-img="assets/images/teaching.jpg" data-cat="Jazz">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Jazz & Street Jazz</h3>
@@ -335,7 +328,6 @@
             <div class="program-media">
               <img src="assets/images/hiphop_street_jazz_1788625331578.jpg" alt="Funk-Based Dance Styles" class="program-img">
               <span class="program-age-tag">Grades 3–12 • Beginner–Intermediate</span>
-              <button class="program-play-pill" data-title="Funk-Based Styles" data-img="assets/images/hiphop.jpg" data-cat="Funk Styles">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Funk-Based Dance Styles</h3>
@@ -356,7 +348,6 @@
             <div class="program-media">
               <img src="assets/images/steptap.jpg" alt="Step Dance Ensemble" class="program-img">
               <span class="program-age-tag">Grades 3–12 • All Levels</span>
-              <button class="program-play-pill" data-title="Step Dance" data-img="assets/images/steptap.jpg" data-cat="Step Dance">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Step Dance</h3>
@@ -377,7 +368,6 @@
             <div class="program-media">
               <img src="assets/images/rehearsal.jpg" alt="Choreography and Dance Composition" class="program-img">
               <span class="program-age-tag">Grades 6–12</span>
-              <button class="program-play-pill" data-title="Choreography Lab" data-img="assets/images/rehearsal.jpg" data-cat="Composition">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Choreography & Dance Composition</h3>
@@ -398,7 +388,6 @@
             <div class="program-media">
               <img src="assets/images/modern.jpg" alt="Dance Performance and Recital Preparation" class="program-img">
               <span class="program-age-tag">Pre-K–12 Assemblies & Recitals</span>
-              <button class="program-play-pill" data-title="Performance Preparation" data-img="assets/images/hero.jpg" data-cat="Performance">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Dance Performance & Recital Preparation</h3>
@@ -419,7 +408,6 @@
             <div class="program-media">
               <img src="assets/images/yoga.jpg" alt="Dance and Anatomy Education" class="program-img">
               <span class="program-age-tag">Grades 3–12</span>
-              <button class="program-play-pill" data-title="Dance & Anatomy" data-img="assets/images/yoga.jpg" data-cat="Body Awareness">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Dance & Anatomy / Physiology</h3>
@@ -440,7 +428,6 @@
             <div class="program-media">
               <img src="assets/images/community.jpg" alt="Dance and STEM Enrichment" class="program-img">
               <span class="program-age-tag">Grades K–8</span>
-              <button class="program-play-pill" data-title="Dance & STEM" data-img="assets/images/community.jpg" data-cat="STEM Enrichment">▶ Preview</button>
             </div>
             <div class="program-body">
               <h3 class="program-title">Dance & STEM Enrichment</h3>
@@ -510,7 +497,7 @@
                 <span class="focus-pill"><span class="focus-pill-icon">✓</span> Movement exploration</span>
               </div>
 
-              <a href="#contact" class="btn btn-primary btn-sm">Bring Pre-K–2 Dance to Your School →</a>
+              <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire About Programs for Pre-K to Grade 2">Inquire About Programs →</a>
             </div>
             <div class="grade-card-visual">
               <img src="assets/images/earlychildhood.jpg" alt="Pre-K to Grade 2 dance classroom" class="grade-card-img">
@@ -541,7 +528,7 @@
                 <span class="focus-pill"><span class="focus-pill-icon">✓</span> Performance</span>
               </div>
 
-              <a href="#contact" class="btn btn-primary btn-sm">Bring Grades 3–5 Dance to Your School →</a>
+              <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire About Programs for Grades 3 to 5">Inquire About Programs →</a>
             </div>
             <div class="grade-card-visual">
               <img src="assets/images/teaching.jpg" alt="Elementary students learning dance technique" class="grade-card-img">
@@ -571,7 +558,7 @@
                 <span class="focus-pill"><span class="focus-pill-icon">✓</span> Performance</span>
               </div>
 
-              <a href="#contact" class="btn btn-primary btn-sm">Bring Middle School Dance to Your School →</a>
+              <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire About Programs for Middle School">Inquire About Programs →</a>
             </div>
             <div class="grade-card-visual">
               <img src="assets/images/hiphop.jpg" alt="Middle school dance ensemble in rehearsal" class="grade-card-img">
@@ -601,7 +588,7 @@
                 <span class="focus-pill"><span class="focus-pill-icon">✓</span> Exploration of dance-related careers</span>
               </div>
 
-              <a href="#contact" class="btn btn-primary btn-sm">Bring High School Dance to Your School →</a>
+              <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire About Programs for High School">Inquire About Programs →</a>
             </div>
             <div class="grade-card-visual">
               <img src="assets/images/modern.jpg" alt="High school dance students performing on stage" class="grade-card-img">
@@ -726,7 +713,7 @@
                 Focused introductory or special-event dance experiences designed for school assemblies, wellness days, or arts celebrations.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About Single-Day Workshops">Inquire About Programs →</a>
           </div>
 
           <!-- Format 2: 6–12 Week Residencies -->
@@ -738,7 +725,7 @@
                 Structured multi-week programs allowing students to progressively develop movement skills, technique, and teamwork.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About 6-12 Week Residencies">Inquire About Programs →</a>
           </div>
 
           <!-- Format 3: After-School Programs -->
@@ -750,7 +737,7 @@
                 Recurring dance enrichment designed for after-school environments, fostering creativity, physical activity, and social growth.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About After-School Programs">Inquire About Programs →</a>
           </div>
 
           <!-- Format 4: Semester Programs -->
@@ -762,7 +749,7 @@
                 Longer-term instruction allowing deeper development of technique, choreography, dance composition, and performance.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About Semester Programs">Inquire About Programs →</a>
           </div>
 
           <!-- Format 5: Year-Long Enrichment -->
@@ -774,7 +761,7 @@
                 Ongoing dance education integrated into a school's enrichment programming, supporting continuous artistic and physical development.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About Year-Long Enrichment">Inquire About Programs →</a>
           </div>
 
           <!-- Format 6: Performance & Choreography Programs -->
@@ -786,7 +773,7 @@
                 Programs designed around preparing students for recitals, ceremonies, showcases, graduations, and community performances.
               </p>
             </div>
-            <a href="#contact" class="format-btn">Discuss a Program →</a>
+            <a href="#contact" class="format-btn" aria-label="Inquire About Performance & Choreography Programs">Inquire About Programs →</a>
           </div>
         </div>
       </div>
@@ -845,7 +832,7 @@
           </div>
 
           <div style="text-align: center;">
-            <a href="#contact" class="btn btn-primary btn-lg">Bring Dance to Your School →</a>
+            <a href="#contact" class="btn btn-primary btn-lg" aria-label="Inquire About Programs">Inquire About Programs →</a>
           </div>
         </div>
       </div>
@@ -994,7 +981,6 @@
             <div class="repertoire-media">
               <img src="assets/images/modern.jpg" alt="Modern dance rehearsal" class="repertoire-img">
               <span class="repertoire-overlay-badge">Modern & Contemporary</span>
-              <div class="repertoire-play-btn" role="button" aria-label="Play video">▶</div>
             </div>
             <div class="repertoire-body">
               <h3 class="repertoire-title">Modern & Contemporary Choreography</h3>
@@ -1013,7 +999,6 @@
             <div class="repertoire-media">
               <img src="assets/images/hiphop.jpg" alt="Hip-Hop dance choreography" class="repertoire-img">
               <span class="repertoire-overlay-badge">Street Jazz & Hip-Hop</span>
-              <div class="repertoire-play-btn" role="button" aria-label="Play video">▶</div>
             </div>
             <div class="repertoire-body">
               <h3 class="repertoire-title">Hip-Hop & Street Jazz Choreography</h3>
@@ -1032,7 +1017,6 @@
             <div class="repertoire-media">
               <img src="assets/images/steptap.jpg" alt="Step and percussive dance" class="repertoire-img">
               <span class="repertoire-overlay-badge">Step & Body Percussion</span>
-              <div class="repertoire-play-btn" role="button" aria-label="Play video">▶</div>
             </div>
             <div class="repertoire-body">
               <h3 class="repertoire-title">Step & Percussive Dance Staging</h3>
@@ -1051,7 +1035,6 @@
             <div class="repertoire-media">
               <img src="assets/images/liturgical.jpg" alt="Liturgical and sacred dance" class="repertoire-img">
               <span class="repertoire-overlay-badge">Liturgical & Sacred Arts</span>
-              <div class="repertoire-play-btn" role="button" aria-label="Play video">▶</div>
             </div>
             <div class="repertoire-body">
               <h3 class="repertoire-title">Liturgical & Sacred Dance Staging</h3>
@@ -1069,8 +1052,9 @@
     </section>
 
     <!-- =======================================================================
-         FILTERABLE MEDIA GALLERY HUB
+         MEDIA GALLERY HUB (Disabled for site cleanup - markup preserved)
          ======================================================================= -->
+    <!--
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-header">
@@ -1081,7 +1065,6 @@
           </p>
         </div>
 
-        <!-- Filter Tags -->
         <div class="media-filter-nav">
           <button class="media-filter-btn active" data-filter="all">All Media</button>
           <button class="media-filter-btn" data-filter="teaching">Teaching</button>
@@ -1095,9 +1078,7 @@
           <button class="media-filter-btn" data-filter="video">Video</button>
         </div>
 
-        <!-- Media Masonry Grid -->
         <div class="media-masonry-grid">
-          <!-- Item 1: Teaching & Classroom -->
           <div class="media-item-card" data-category="teaching classroom" data-title="Youth Dance Class in Action" data-category-label="Teaching & Classroom" data-desc="Guiding young students through foundational movement, spatial awareness, and rhythm.">
             <img src="assets/images/teaching.jpg" alt="Youth dance class instruction" class="media-item-img">
             <div class="media-type-icon">📷</div>
@@ -1106,115 +1087,10 @@
               <div class="media-item-caption">Youth Movement Instruction & Body Awareness</div>
             </div>
           </div>
-
-          <!-- Item 2: Modern Performance -->
-          <div class="media-item-card" data-category="performance choreography video" data-title="Contemporary Dance Ensemble" data-category-label="Performance" data-desc="Ensemble stage choreography highlighting fluid lines and contemporary technique.">
-            <img src="assets/images/modern.jpg" alt="Contemporary dance performance" class="media-item-img">
-            <div class="media-type-icon">▶</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Performance</div>
-              <div class="media-item-caption">Modern & Contemporary Stage Repertoire</div>
-            </div>
-          </div>
-
-          <!-- Item 3: Hip Hop & Recitals -->
-          <div class="media-item-card" data-category="choreography performance recitals video" data-title="Hip-Hop Youth Choreography" data-category-label="Choreography & Recitals" data-desc="Dynamic hip-hop student ensemble performance.">
-            <img src="assets/images/hiphop.jpg" alt="Hip hop student choreography" class="media-item-img">
-            <div class="media-type-icon">▶</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Choreography & Recitals</div>
-              <div class="media-item-caption">Hip-Hop Ensemble Showcase</div>
-            </div>
-          </div>
-
-          <!-- Item 4: Rehearsal Lab & Behind the Scenes -->
-          <div class="media-item-card" data-category="rehearsal behind-the-scenes teaching" data-title="Choreography Rehearsal Lab" data-category-label="Rehearsal & Process" data-desc="Phe-be demonstrating phrasing nuance and movement intention during a rehearsal session.">
-            <img src="assets/images/rehearsal.jpg" alt="Dance rehearsal lab" class="media-item-img">
-            <div class="media-type-icon">📷</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Rehearsal & Process</div>
-              <div class="media-item-caption">Choreography Lab & Rehearsal Flow</div>
-            </div>
-          </div>
-
-          <!-- Item 5: Community & School Residency -->
-          <div class="media-item-card" data-category="community classroom teaching" data-title="School Residency Workshop" data-category-label="Community & Residency" data-desc="Classroom circle workshop discovering rhythm, coordination, and collaborative teamwork.">
-            <img src="assets/images/community.jpg" alt="School dance workshop" class="media-item-img">
-            <div class="media-type-icon">📷</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Community & Residency</div>
-              <div class="media-item-caption">School Dance Workshop & Teamwork Circle</div>
-            </div>
-          </div>
-
-          <!-- Item 6: Early Childhood Creative Movement -->
-          <div class="media-item-card" data-category="teaching classroom" data-title="Early Childhood Creative Movement" data-category-label="Teaching & Classroom" data-desc="Young children exploring gross motor coordination, balance, and rhythm.">
-            <img src="assets/images/earlychildhood.jpg" alt="Early childhood creative movement class" class="media-item-img">
-            <div class="media-type-icon">📷</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Teaching & Classroom</div>
-              <div class="media-item-caption">Early Childhood Movement Exploration</div>
-            </div>
-          </div>
-
-          <!-- Item 7: Ballet Foundations -->
-          <div class="media-item-card" data-category="teaching classroom" data-title="Ballet Foundations & Barre" data-category-label="Teaching & Classroom" data-desc="Students learning spine elongation, posture, and balance at the studio barre.">
-            <img src="assets/images/ballet.jpg" alt="Ballet barre technique class" class="media-item-img">
-            <div class="media-type-icon">📷</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Teaching & Classroom</div>
-              <div class="media-item-caption">Ballet Barre Alignment & Form</div>
-            </div>
-          </div>
-
-          <!-- Item 8: Step & Body Percussion -->
-          <div class="media-item-card" data-category="performance choreography video" data-title="Step & Percussive Movement" data-category-label="Performance" data-desc="Synchronized step dance routines combining rhythmic stomps and team precision.">
-            <img src="assets/images/steptap.jpg" alt="Step and body percussion ensemble" class="media-item-img">
-            <div class="media-type-icon">▶</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Performance</div>
-              <div class="media-item-caption">Step Dance Ensemble Precision</div>
-            </div>
-          </div>
-
-          <!-- Item 9: Liturgical & Devotional Dance -->
-          <div class="media-item-card" data-category="performance choreography" data-title="Liturgical Sacred Movement" data-category-label="Performance" data-desc="Expressive contemporary liturgical dance utilizing flowing silk banners.">
-            <img src="assets/images/liturgical.jpg" alt="Liturgical sacred dance performance" class="media-item-img">
-            <div class="media-type-icon">📷</div>
-            <div class="media-overlay">
-              <div class="media-tag-pill">Performance</div>
-              <div class="media-item-caption">Liturgical & Sacred Dance Staging</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Instagram Community Showcase Banner -->
-        <div style="margin-top: 48px; padding: 32px 40px; background: var(--bg-glass-card); border: 1px solid var(--border-glass); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; box-shadow: var(--shadow-dramatic);">
-          <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; box-shadow: 0 4px 18px rgba(220, 39, 67, 0.4);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.1em;">
-                Follow On Instagram • @ms.phebe718
-              </div>
-              <h4 style="font-size: 1.35rem; margin: 4px 0; color: var(--text-primary);">
-                Classes, Student Choreography & Stage Highlights
-              </h4>
-              <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
-                Follow daily dance teaching moments, student choreography workshops, and school residency highlights.
-              </p>
-            </div>
-          </div>
-          <a href="https://www.instagram.com/ms.phebe718" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 10px;">
-            <span>Follow @ms.phebe718</span>
-            <span>↗</span>
-          </a>
         </div>
       </div>
     </section>
+    -->
 
     <!-- =======================================================================
          YOUTH DEVELOPMENT & CORE VALUES
@@ -1518,7 +1394,7 @@
   </footer>
 
   <!-- =========================================================================
-       MODAL: CINEMATIC VIDEO & HIGHLIGHT LIGHTBOX
+       MODAL: CINEMATIC VIDEO & HIGHLIGHT LIGHTBOX (Preserved for future use)
        ========================================================================= -->
   <div class="modal-backdrop" id="video-modal">
     <div class="modal-card">
@@ -1575,7 +1451,7 @@
         </ul>
 
         <div style="margin-top: 32px; display: flex; justify-content: flex-end; gap: 14px;">
-          <a href="#contact" class="btn btn-primary" onclick="window.curriculumModal.close();">Inquire for This Program →</a>
+          <a href="#contact" class="btn btn-primary" onclick="window.curriculumModal.close();" aria-label="Inquire About Programs">Inquire About Programs →</a>
         </div>
       </div>
     </div>
