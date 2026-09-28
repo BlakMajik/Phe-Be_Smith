@@ -1,52 +1,66 @@
 /**
- * Interactive Booking & Residency Inquiry Engine
- * Supports multi-tier inquiries: K-12 School Residencies, Dance Studio Masterclasses,
- * Choreographic Commissions, and Youth Development Workshops.
+ * Interactive School Partnership & Residency Inquiry Engine
+ * Supports K-12 schools, after-school programs, and community organizations.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('residency-inquiry-form');
-  const orgTypeSelect = document.getElementById('inquiry-org-type');
-  const programSelect = document.getElementById('inquiry-program');
+  const programTypeSelect = document.getElementById('inquiry-program-type');
   const estimateBox = document.getElementById('inquiry-estimate-pill');
   const toast = document.getElementById('booking-toast');
 
-  // Dynamic estimate calculator
-  function updateEstimate() {
-    if (!orgTypeSelect || !programSelect || !estimateBox) return;
+  // Dynamic helper text
+  function updateProgramHelper() {
+    if (!programTypeSelect || !estimateBox) return;
 
-    const org = orgTypeSelect.value;
-    const prog = programSelect.value;
+    const prog = programTypeSelect.value;
+    let text = "Custom Partnership Proposal";
 
-    let estimateText = "Custom Proposal Based on Needs";
-
-    if (org === 'school-k12') {
-      estimateText = "Tier I/Title I Grant Eligible • Multi-Week Packages";
-    } else if (org === 'studio') {
-      estimateText = "Weekend Intensive / Single Day Masterclass Rates";
-    } else if (org === 'commission') {
-      estimateText = "Original Stage Work • Production & Repertoire Scope";
-    } else if (org === 'community') {
-      estimateText = "Subsidized Community Arts & Youth Empowerment Rates";
+    switch (prog) {
+      case 'Single-Day Workshop':
+        text = "Focused introductory or special-event dance experience.";
+        break;
+      case '6–12 Week Residency':
+        text = "Structured multi-week program developing progressive movement skills.";
+        break;
+      case 'After-School Program':
+        text = "Recurring dance enrichment designed for after-school environments.";
+        break;
+      case 'Semester Program':
+        text = "In-depth instruction developing technique, choreography, and performance.";
+        break;
+      case 'Year-Long Enrichment':
+        text = "Ongoing dance education integrated into your school enrichment schedule.";
+        break;
+      case 'Choreography / Performance Program':
+        text = "Rehearsal and staging designed for recitals, ceremonies, or showcases.";
+        break;
+      default:
+        text = "Custom partnership tailored to your school or organization's goals.";
     }
 
-    estimateBox.textContent = `Suggested Program: ${estimateText}`;
+    estimateBox.textContent = `Selected Format: ${text}`;
   }
 
-  if (orgTypeSelect) orgTypeSelect.addEventListener('change', updateEstimate);
-  if (programSelect) programSelect.addEventListener('change', updateEstimate);
+  if (programTypeSelect) {
+    programTypeSelect.addEventListener('change', updateProgramHelper);
+  }
 
   // Form submission handler
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('inquiry-name').value;
-      const orgName = document.getElementById('inquiry-org-name').value;
-      const email = document.getElementById('inquiry-email').value;
+      const nameInput = document.getElementById('inquiry-name');
+      const orgInput = document.getElementById('inquiry-org');
+      const emailInput = document.getElementById('inquiry-email');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const org = orgInput ? orgInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
 
       if (!name || !email) {
-        alert("Please fill in your name and email.");
+        alert("Please provide your name and email address.");
         return;
       }
 
@@ -56,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display:flex; align-items:center; gap:12px;">
             <span style="font-size:1.4rem;">✨</span>
             <div>
-              <strong>Inquiry Received, ${name}!</strong>
-              <div style="font-size:0.85rem; opacity:0.9;">Phe-be Smith and her team will respond within 24–48 hours.</div>
+              <strong>Thank you, ${name}!</strong>
+              <div style="font-size:0.85rem; opacity:0.9;">Your inquiry for ${org || 'your organization'} has been received. Phe-be Smith will be in touch shortly.</div>
             </div>
           </div>
         `;
@@ -68,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       form.reset();
-      updateEstimate();
+      updateProgramHelper();
     });
   }
 });

@@ -1577,3 +1577,637 @@
   transform: translateY(0);
   opacity: 1;
 }
+
+/* --------------------------------------------------------------------------
+   GRADE LEVEL INTERACTIVE SECTION (PRE-K TO 12)
+   -------------------------------------------------------------------------- */
+.grade-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.grade-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.grade-tab-btn:hover {
+  border-color: var(--accent-coral);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.grade-tab-btn.active {
+  background: var(--grad-sunset);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px var(--glow-coral);
+}
+
+.grade-tab-btn[data-grade="3-5"].active {
+  background: var(--grad-electric);
+  box-shadow: 0 8px 24px var(--glow-purple);
+}
+
+.grade-tab-btn[data-grade="6-8"].active {
+  background: var(--grad-ocean);
+  box-shadow: 0 8px 24px var(--glow-cyan);
+}
+
+.grade-tab-btn[data-grade="9-12"].active {
+  background: var(--grad-gold-sun);
+  box-shadow: 0 8px 24px var(--glow-gold);
+}
+
+.grade-tab-panel {
+  display: none;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.grade-tab-panel.active {
+  display: block;
+}
+
+.grade-card-showcase {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: var(--shadow-dramatic);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .grade-card-showcase {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 28px;
+  }
+}
+
+.grade-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: var(--grad-sunset);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.grade-card-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.grade-card-lead {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.focus-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.focus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.focus-pill:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent-coral);
+  transform: translateY(-2px);
+}
+
+.focus-pill-icon {
+  color: var(--accent-coral);
+}
+
+.grade-card-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  border: 2px solid var(--border-glass);
+  box-shadow: var(--shadow-dramatic);
+}
+
+.grade-card-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   TEACHING APPROACH: 7-STEP ANIMATED CLASS FLOW
+   -------------------------------------------------------------------------- */
+.class-flow-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 24px 8px 36px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.class-flow-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.class-flow-track::-webkit-scrollbar-thumb {
+  background: var(--grad-sunset);
+  border-radius: var(--radius-full);
+}
+
+.class-flow-step-box {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  position: relative;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.class-flow-step-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-coral);
+  box-shadow: var(--shadow-dramatic);
+}
+
+.class-flow-step-box:nth-child(1) { border-top: 4px solid var(--accent-coral); }
+.class-flow-step-box:nth-child(2) { border-top: 4px solid var(--accent-orange); }
+.class-flow-step-box:nth-child(3) { border-top: 4px solid var(--accent-gold); }
+.class-flow-step-box:nth-child(4) { border-top: 4px solid var(--accent-magenta); }
+.class-flow-step-box:nth-child(5) { border-top: 4px solid var(--accent-purple); }
+.class-flow-step-box:nth-child(6) { border-top: 4px solid var(--accent-cyan); }
+.class-flow-step-box:nth-child(7) { border-top: 4px solid var(--accent-teal); }
+
+.class-flow-index {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 10px;
+  background: var(--grad-sunset);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.class-flow-name {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.class-flow-description {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .class-flow-track {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    overflow-x: visible;
+    padding: 16px 0;
+  }
+  .class-flow-step-box {
+    flex: auto;
+  }
+}
+
+.teaching-adaptation-card {
+  margin-top: 36px;
+  padding: 28px 36px;
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .teaching-adaptation-card {
+    flex-direction: column;
+    padding: 24px;
+    text-align: center;
+  }
+}
+
+.adaptation-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--grad-sunset);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px var(--glow-coral);
+}
+
+.adaptation-title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.adaptation-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAM FORMATS FOR SCHOOLS & ORGANIZATIONS
+   -------------------------------------------------------------------------- */
+.formats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .formats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .formats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.format-card {
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+}
+
+.format-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-coral);
+  box-shadow: var(--shadow-dramatic);
+}
+
+.format-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.format-card:nth-child(1) .format-icon-wrap { background: var(--grad-sunset); box-shadow: 0 6px 16px var(--glow-coral); }
+.format-card:nth-child(2) .format-icon-wrap { background: var(--grad-electric); box-shadow: 0 6px 16px var(--glow-purple); }
+.format-card:nth-child(3) .format-icon-wrap { background: var(--grad-ocean); box-shadow: 0 6px 16px var(--glow-cyan); }
+.format-card:nth-child(4) .format-icon-wrap { background: var(--grad-aurora); box-shadow: 0 6px 16px var(--glow-magenta); }
+.format-card:nth-child(5) .format-icon-wrap { background: var(--grad-gold-sun); box-shadow: 0 6px 16px var(--glow-gold); }
+.format-card:nth-child(6) .format-icon-wrap { background: var(--grad-sunset); box-shadow: 0 6px 16px var(--glow-coral); }
+
+.format-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.format-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.format-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent-coral);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.format-btn:hover {
+  color: var(--accent-purple);
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   SCHOOL PARTNERSHIPS & BRONX OUTREACH
+   -------------------------------------------------------------------------- */
+.partnerships-box {
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-dramatic);
+}
+
+@media (max-width: 768px) {
+  .partnerships-box {
+    padding: 28px;
+  }
+}
+
+.partner-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 32px 0;
+}
+
+@media (max-width: 860px) {
+  .partner-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .partner-types-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.partner-type-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.partner-type-item:hover {
+  border-color: var(--accent-coral);
+  background: var(--bg-elevated);
+  transform: translateY(-2px);
+}
+
+.partner-type-icon {
+  font-size: 1.3rem;
+  color: var(--accent-coral);
+}
+
+.formats-tags-strip {
+  padding: 18px 24px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-glass);
+  margin-bottom: 32px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   CREDENTIALS & DOCUMENTED TEACHING BACKGROUND
+   -------------------------------------------------------------------------- */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.credential-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-glass-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.credential-item:hover {
+  border-color: var(--accent-coral);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.credential-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-sunset);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px var(--glow-coral);
+}
+
+.credential-title {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.credential-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.teaching-orgs-box {
+  padding: 32px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 36px;
+}
+
+.teaching-orgs-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: var(--text-primary);
+}
+
+.teaching-orgs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .teaching-orgs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teaching-org-card {
+  padding: 18px 20px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.teaching-org-card span.org-bullet {
+  color: var(--accent-coral);
+  font-size: 1.2rem;
+}
+
+.disciplines-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.discipline-badge {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.discipline-badge:hover {
+  background: var(--grad-sunset);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--glow-coral);
+}
+
+/* --------------------------------------------------------------------------
+   TESTIMONIALS PLACEHOLDER
+   -------------------------------------------------------------------------- */
+.testimonials-placeholder-card {
+  padding: 48px;
+  background: var(--bg-glass-card);
+  border: 2px dashed var(--border-glass);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.test-placeholder-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.test-placeholder-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.test-placeholder-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 600px;
+  margin: 0 auto;
+}
+

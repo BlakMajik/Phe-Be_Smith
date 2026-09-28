@@ -1,7 +1,7 @@
 /**
  * PHE-BE SMITH PLATFORM — VIBRANT & JOYFUL CONTROLLER
- * Orchestrates Theme Toggling, Vibrant Multi-Color Particle Canvas,
- * Scroll Animations, Interactive STEM Tabs, and Number Counters.
+ * Orchestrates Theme Toggling, Particle Canvas, Scroll Animations,
+ * Interactive Grade Level Tabs, and Number Counters.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParticles();
   initHeaderScroll();
   initMobileMenu();
-  initStemTabs();
+  initGradeTabs();
   initStatsCounters();
   initChoreographyTriggers();
 });
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
-  // Default to vibrant light theme
   const savedTheme = localStorage.getItem('phebe-theme') || 'light';
 
   document.documentElement.setAttribute('data-theme', savedTheme);
@@ -56,6 +55,7 @@ function initHeroParticles() {
   const vibrantColors = ['#ff4757', '#ff7f11', '#ffaa00', '#e024c3', '#7928ca', '#00b4d8', '#06d6a0'];
 
   function resize() {
+    if (!canvas.parentElement) return;
     width = canvas.width = canvas.parentElement.offsetWidth;
     height = canvas.height = canvas.parentElement.offsetHeight;
   }
@@ -69,8 +69,8 @@ function initHeroParticles() {
     }
 
     reset() {
-      this.x = Math.random() * width;
-      this.y = height + Math.random() * 20;
+      this.x = Math.random() * (width || 800);
+      this.y = (height || 600) + Math.random() * 20;
       this.size = Math.random() * 3.5 + 1.5;
       this.speedY = Math.random() * 0.9 + 0.35;
       this.speedX = (Math.random() - 0.5) * 0.8;
@@ -103,9 +103,9 @@ function initHeroParticles() {
     }
   }
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 45; i++) {
     const p = new Particle();
-    p.y = Math.random() * height;
+    p.y = Math.random() * (height || 600);
     particles.push(p);
   }
 
@@ -139,7 +139,7 @@ function initHeaderScroll() {
     // Scroll Spy
     let currentId = '';
     sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
+      const top = sec.offsetTop - 140;
       const height = sec.offsetHeight;
       if (window.scrollY >= top && window.scrollY < top + height) {
         currentId = sec.getAttribute('id');
@@ -179,21 +179,21 @@ function initMobileMenu() {
 }
 
 /* --------------------------------------------------------------------------
-   STEM + MOVEMENT SCIENCE TABS
+   GRADE LEVEL INTERACTIVE TABS
    -------------------------------------------------------------------------- */
-function initStemTabs() {
-  const tabBtns = document.querySelectorAll('.stem-tab-btn');
-  const tabPanels = document.querySelectorAll('.stem-tab-panel');
+function initGradeTabs() {
+  const tabBtns = document.querySelectorAll('.grade-tab-btn');
+  const tabPanels = document.querySelectorAll('.grade-tab-panel');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetTab = btn.getAttribute('data-tab');
+      const grade = btn.getAttribute('data-grade');
 
       tabBtns.forEach(b => b.classList.remove('active'));
       tabPanels.forEach(p => p.classList.remove('active'));
 
       btn.classList.add('active');
-      const activePanel = document.getElementById(`stem-panel-${targetTab}`);
+      const activePanel = document.getElementById(`grade-panel-${grade}`);
       if (activePanel) {
         activePanel.classList.add('active');
       }
@@ -215,9 +215,11 @@ function initStatsCounters() {
         counters.forEach(counter => {
           const target = parseInt(counter.getAttribute('data-target'), 10);
           const suffix = counter.getAttribute('data-suffix') || '';
+          if (isNaN(target)) return;
+
           let count = 0;
-          const duration = 1800;
-          const stepTime = 20;
+          const duration = 1600;
+          const stepTime = 25;
           const totalSteps = duration / stepTime;
           const increment = target / totalSteps;
 
@@ -257,9 +259,9 @@ function initChoreographyTriggers() {
       playBtn.addEventListener('click', () => {
         if (window.videoLightbox) {
           window.videoLightbox.open({
-            title: title,
-            category: premiere || "Signature Repertoire",
-            desc: synopsis || "Original choreographic work blending modern, African diaspora, and theatrical storytelling.",
+            title: title || "Choreography & Repertoire",
+            category: premiere || "Choreographic Work",
+            desc: synopsis || "Original choreography and stage rehearsal work in New York City.",
             imageSrc: imgSrc
           });
         }

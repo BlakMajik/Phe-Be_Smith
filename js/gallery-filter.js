@@ -1,7 +1,7 @@
 /**
  * Interactive Filterable Media Gallery
- * Supports filtering across Teaching, Performances, Rehearsals, and Community Residencies.
- * Connects with the Video Lightbox and fullscreen high-res image inspector.
+ * Supports filtering across Teaching, Classroom, Choreography, Performance,
+ * Rehearsal, Recitals, Community, Behind the Scenes, and Video.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const filterValue = btn.getAttribute('data-filter');
 
       mediaItems.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (filterValue === 'all' || itemCategory === filterValue) {
+        const itemCategory = item.getAttribute('data-category') || '';
+        const itemCategories = itemCategory.split(' ');
+
+        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
           item.style.display = 'block';
           item.style.animation = 'fadeIn 0.4s ease forwards';
         } else {
@@ -31,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Attach Lightbox triggers to each media item card
   mediaItems.forEach(card => {
     card.addEventListener('click', () => {
-      const title = card.getAttribute('data-title') || 'Performance Archive';
-      const category = card.getAttribute('data-category-label') || 'Dance Archive';
-      const desc = card.getAttribute('data-desc') || 'Capturing moments of discipline, joy, and transformative artistic expression.';
+      const title = card.getAttribute('data-title') || 'Dance Archive';
+      const category = card.getAttribute('data-category-label') || 'Dance Media';
+      const desc = card.getAttribute('data-desc') || 'Capturing moments of discipline, joy, and creative expression.';
       const img = card.querySelector('.media-item-img');
       const imgSrc = img ? img.getAttribute('src') : 'assets/images/hero.jpg';
 

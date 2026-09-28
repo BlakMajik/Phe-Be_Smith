@@ -1,128 +1,157 @@
 /**
  * Interactive Curriculum & Program Deep-Dive Modal Engine
- * Provides detailed breakdowns of each discipline: Age targets, STEM connections,
- * Social-Emotional Learning (SEL) goals, class structure, and student outcomes.
+ * Accurately represents Phe-be Smith's K–12 Dance Education Programs
  */
 
 const PROGRAM_DATA = {
-  "early-childhood": {
-    title: "Early Childhood Dance & Creative Movement",
-    age: "Ages 3 – 5 (Preschool & Kindergarten)",
+  "creative-movement": {
+    title: "Creative Movement & Early Childhood Dance",
+    age: "Early Childhood to Grade 2 (Ages 2–7)",
     image: "assets/images/earlychildhood.jpg",
-    tagline: "Cultivating Joy, Spatial Imagination & Motor Foundations",
-    overview: "A whimsical, scientifically grounded introduction to body awareness, musicality, and spatial navigation. Through sensory props (silk scarves, rhythm instruments, story prompts), tiny movers develop gross motor control, emotional expression, and social turn-taking in a loving, vibrant environment.",
-    stemFocus: "Spatial geometry, bilateral coordination, rhythm-to-movement pattern recognition.",
-    selGoals: "Self-regulation, listening discipline, joyful self-expression, empathetic group sharing.",
+    tagline: "Movement Exploration, Rhythm, Body Awareness & Joy",
+    overview: "An engaging, developmentally tailored introduction to movement for young children. Students explore rhythm, musicality, coordination, spatial awareness, and creative expression through playful games, props, and imaginative storytelling.",
+    stemFocus: "Physical awareness, spatial navigation, dynamic balance, and rhythm pattern recognition.",
+    selGoals: "Confidence, social turn-taking, active listening, and joyful self-expression.",
     sampleUnits: [
-      "Shape & Level Exploration (High, Low, Curved, Angular)",
-      "Animal Metaphors & Dynamic Weight Shifts",
-      "Rhythm Games with Percussion Clapping",
-      "Creative Storybook Dance Compositions"
+      "Spatial Awareness: High, Medium, and Low Levels",
+      "Rhythm, Musicality, and Percussion Clapping",
+      "Bilateral Coordination and Locomotor Movement",
+      "Creative Movement Games and Storytelling"
     ]
   },
-  "hiphop-jazz": {
-    title: "Hip-Hop & Street Jazz Foundations",
-    age: "Ages 6 – 18 & Adult Masterclasses",
-    image: "assets/images/hiphop.jpg",
-    tagline: "Kinetic Grooves, Poly-Rhythmic Precision & Cultural Authenticity",
-    overview: "Rooted in African-American vernacular movement traditions, this high-energy program teaches groove, bounce, isolations, breaking basics, popping/locking footwork, and street jazz theatricality. Students learn historical cultural lineages while finding their unique swagger and freestyle voice.",
-    stemFocus: "Kinematic velocity, center of mass transitions, polyrhythmic time division.",
-    selGoals: "Audacious self-confidence, team cypher support, resilience through intricate drills.",
-    sampleUnits: [
-      "Foundational Grooves: Bounce, Rock, Wave & Isolations",
-      "Syncopated Rhythmics & Street Jazz Floorwork",
-      "Cypher Circles & Freestyling Strategy",
-      "Ensemble Staging & Dynamic Formation Switching"
-    ]
-  },
-  "modern-contemporary": {
-    title: "Modern & Contemporary Dance Technique",
-    age: "Ages 8 – Pre-Professional",
-    image: "assets/images/modern.jpg",
-    tagline: "Horton Fortifications, Graham Contractions & Theatrical Storytelling",
-    overview: "Drawing heavily on Alvin Ailey, Lester Horton, and Martha Graham traditions, this discipline emphasizes flat backs, lateral T's, pelvic contractions, floor suspensions, and soaring leaps. Dancers learn to channel vulnerability, historical memory, and emotional depth through sculptural movement.",
-    stemFocus: "Angular momentum in turns, gravitational resistance, kinetic energy storage.",
-    selGoals: "Emotional catharsis, somatic presence, mutual trust in partnering lifts.",
-    sampleUnits: [
-      "Horton Technique: Fortifications, Lateral T's & Flat Backs",
-      "Floorwork Flow, Inversions & Weight Sharing",
-      "Lyrical Phrasing & Dramatic Intention",
-      "Choreographic Composition & Student Solo Lab"
-    ]
-  },
-  "ballet-foundations": {
-    title: "Ballet Foundations & Anatomical Alignment",
-    age: "Ages 5 – Adult",
+  "ballet": {
+    title: "Ballet (Beginner–Intermediate)",
+    age: "Grades K–12 (Ages 5–18)",
     image: "assets/images/ballet.jpg",
-    tagline: "Biomechanics, Grace, Classical Posture & Core Stability",
-    overview: "A safe, anatomical approach to classical ballet foundations that celebrates diverse body types and fosters long-term physical health. Emphasis is placed on proper turnout from the hips, spinal elongation, core engagement, and expressive port de bras.",
-    stemFocus: "Biomechanics of turnout, bone alignment, physics of balance on relevé.",
-    selGoals: "Patience, personal accountability, refined mindfulness and poise.",
+    tagline: "Foundational Technique, Vocabulary, Posture & Coordination",
+    overview: "Introduces students to classical ballet fundamentals in an encouraging and accessible environment. Focuses on foundational technique, French terminology, posture, alignment, musicality, and graceful movement combinations.",
+    stemFocus: "Postural alignment, center of balance, and core coordination.",
+    selGoals: "Focus, discipline, poise, and personal dedication to technical growth.",
     sampleUnits: [
-      "Barre Architecture: Plies, Tendus, Degages, Rond de Jambes",
-      "Center Adagio: Balances, Port de Bras & Flow",
-      "Allegro Fundamentals: Sauté, Changement, Petit Jete",
-      "French Ballet Vocabulary & Stage Geography"
+      "Foundational Barre Exercises & Alignment (Pliés, Tendus, Dégagés)",
+      "Ballet Vocabulary and French Terminology",
+      "Center Floor Adagio and Port de Bras",
+      "Allegro Footwork, Rhythm, and Musical Phrasing"
     ]
   },
-  "step-percussion": {
-    title: "Step, Body Percussion & Rhythmics",
-    age: "Ages 7 – 18",
+  "hip-hop": {
+    title: "Hip-Hop (Beginner–Intermediate)",
+    age: "Grades 3–12 (Ages 8–18)",
+    image: "assets/images/hiphop.jpg",
+    tagline: "Rhythm, Musicality, Foundational Movement & Performance",
+    overview: "High-energy dance classes introducing students to hip-hop fundamentals, bounce, rhythm, isolations, and dynamic choreography. Emphasizes musical interpretation, personal style, teamwork, and performance confidence.",
+    stemFocus: "Rhythmic synchronization, weight transfer dynamics, and spatial timing.",
+    selGoals: "Self-expression, teamwork, positive peer encouragement, and stage confidence.",
+    sampleUnits: [
+      "Foundational Grooves: Bounce, Rock, and Isolations",
+      "Rhythmic Footwork and Syncopated Timing",
+      "Ensemble Choreography & Stage Formations",
+      "Freestyle Circles & Creative Decision-Making"
+    ]
+  },
+  "jazz-street-jazz": {
+    title: "Jazz & Street Jazz (Beginner–Intermediate)",
+    age: "Grades 3–12 (Ages 8–18)",
+    image: "assets/images/teaching.jpg",
+    tagline: "Technique, Expressive Movement, Choreography & Performance",
+    overview: "Combines structured jazz dance technique with contemporary street jazz stylings. Students develop clean lines, sharp isolations, musicality, dynamic performance quality, and original choreography.",
+    stemFocus: "Coordination of isolated body movements and directional velocity changes.",
+    selGoals: "Stage presence, expressive storytelling, and collaborative rehearsal discipline.",
+    sampleUnits: [
+      "Jazz Isolations and Center Warm-Up Sequences",
+      "Across-the-Floor Traveling Steps and Turns",
+      "Street Jazz Phrasing and Dynamic Accentuation",
+      "Small-Group Choreography Collaborations"
+    ]
+  },
+  "funk-styles": {
+    title: "Funk-Based Dance Styles",
+    age: "Grades 3–12 (Ages 8–18)",
+    image: "assets/images/hiphop.jpg",
+    tagline: "Rhythm, Musicality, Movement Vocabulary & Creative Expression",
+    overview: "Explores foundational funk-based movement vocabularies and illusion styles. Students learn rhythmic groove, musicality, sharp execution, and creative freestyle expression in an active, supportive atmosphere.",
+    stemFocus: "Controlled muscle contraction/release timing and rhythmic precision.",
+    selGoals: "Artistic curiosity, body confidence, and individuality in movement.",
+    sampleUnits: [
+      "Introduction to Funk Grooves and Timing",
+      "Isolations, Stops, and Movement Accents",
+      "Rhythmic Footwork and Coordination Exercises",
+      "Creative Improvisation and Movement Vocabulary"
+    ]
+  },
+  "step-dance": {
+    title: "Step Dance",
+    age: "Grades 3–12 (Ages 8–18)",
     image: "assets/images/steptap.jpg",
-    tagline: "The Body as an Instrument: Power, Unity & Ancestral Percussion",
-    overview: "Honoring the storied HBCU stepping tradition and African gumboot dance, this electrifying curriculum transforms the body into a polyrhythmic percussion ensemble. Students master intricate stomps, claps, vocal chants, and geometric synchronized formations.",
-    stemFocus: "Acoustic resonance, mathematical fractions in compound rhythm, physics of impact.",
-    selGoals: "Unbreakable teamwork, leadership, vocal projection, collective pride.",
+    tagline: "Rhythm, Coordination, Teamwork & Acoustic Percussion",
+    overview: "A dynamic percussive movement tradition where students use footsteps, hand claps, and spoken word to produce intricate polyrhythms. Fosters exceptional teamwork, rhythmic timing, precision, and ensemble unity.",
+    stemFocus: "Mathematical meter counting, acoustic rhythm layering, and spatial alignment.",
+    selGoals: "Ensemble trust, vocal projection, mutual accountability, and school pride.",
     sampleUnits: [
-      "The 8-Count Blueprint: Stomp, Clap, Slap & Snap",
-      "Call-and-Response Syncopations & Vocal Projection",
-      "Complex Marching Drills & Blind Synchronization",
-      "Team Showcase Composition & Battle Cadences"
+      "Core Percussive Mechanics: Stomps, Claps, Slaps, and Snaps",
+      "Call-and-Response Syncopations and Beat Counting",
+      "Synchronized Team Formations and Directional Transitions",
+      "Group Step Composition and Showcase Routines"
     ]
   },
-  "liturgical-sacred": {
-    title: "Liturgical & Sacred Movement Ministry",
-    age: "All Ages & Faith Communities",
-    image: "assets/images/liturgical.jpg",
-    tagline: "Sacred Storytelling, Devotional Grace & Spiritual Uplift",
-    overview: "A spiritual, uplifting movement practice utilizing expressive contemporary dance, flowing banners, flags, and sacred choreography to communicate message of hope, healing, restoration, and spiritual worship. Perfect for church ministries and interfaith arts festivals.",
-    stemFocus: "Fluid mechanics of silk drape, spatial staging for spiritual transcendence.",
-    selGoals: "Spiritual centering, community empathy, deep reverence, emotional healing.",
-    sampleUnits: [
-      "Devotional Warm-up & Contemplative Grounding",
-      "Prop Artistry: Billowing Silks, Flags & Banners",
-      "Scriptural Interpretation Through Movement",
-      "Ceremonial Ensembles & Sacred Processionals"
-    ]
-  },
-  "yoga-somatics": {
-    title: "Yoga, Somatic Flow & Injury Prevention",
-    age: "Ages 10 – Educators & Adults",
-    image: "assets/images/yoga.jpg",
-    tagline: "Nervous System Regulation, Breath Integration & Longevity",
-    overview: "Designed specifically for young movers and active educators, this somatic practice blends Vinyasa yoga, myofascial release, breathwork, and alignment therapy. Promotes lifetime joint health, nervous system restoration, and cognitive calm.",
-    stemFocus: "Parasympathetic nervous system activation, kinesiological recovery rates.",
-    selGoals: "Stress relief, body positivity, active mindfulness, self-compassion.",
-    sampleUnits: [
-      "Pranayama Breathing & Diaphragmatic Regulation",
-      "Dynamic Hip Opening & Spinal Mobility Flow",
-      "Myofascial Release Techniques for Dancers",
-      "Guided Meditation & Restorative Savasana"
-    ]
-  },
-  "masterclasses": {
-    title: "Masterclasses, Intensives & Educator Professional Development",
-    age: "K-12 Teachers, Studios, University Dance Programs",
+  "choreography-composition": {
+    title: "Choreography & Dance Composition",
+    age: "Grades 6–12 (Ages 11–18)",
     image: "assets/images/rehearsal.jpg",
-    tagline: "Pedagogical Excellence, Culturally Responsive Teaching & STEM Integration",
-    overview: "Phe-be Smith delivers high-impact masterclasses, choreographic residencies, and accredited professional development workshops for dance educators, public school arts teachers, and studio directors looking to elevate their pedagogy.",
-    stemFocus: "Dance-STEM curriculum design, kinesiological safety audits for classrooms.",
-    selGoals: "Culturally sustaining pedagogy, trauma-informed movement instruction.",
+    tagline: "Movement Creation, Sequencing, Musical Interpretation & Composition",
+    overview: "Empowers youth to become choreographers and creators. Students explore movement motifs, choreographic tools (canon, inversion, tempo changes, levels), musical interpretation, and collaborative composition.",
+    stemFocus: "Structural design, spatial geometric pathways, and thematic sequencing.",
+    selGoals: "Creative problem-solving, constructive communication, and artistic leadership.",
     sampleUnits: [
-      "Deconstructing Biomechanics for Safe Youth Instruction",
-      "Creating Culturally Responsive Dance Curriculums",
-      "Choreographic Staging for Large Youth Ensembles",
-      "Measuring Social-Emotional Learning in Dance Education"
+      "Generating Original Movement Motifs from Themes or Prompts",
+      "Choreographic Devices: Canon, Retrograde, Repetition, and Contrast",
+      "Music Analysis, Phrasing, and Tempo Adaptation",
+      "Peer Feedback, Revision, and Showcase Staging"
+    ]
+  },
+  "performance-recital": {
+    title: "Dance Performance & Recital Preparation",
+    age: "Grades Pre-K–12 (Ages 4–18)",
+    image: "assets/images/hero.jpg",
+    tagline: "Choreography, Rehearsal, Stage Readiness & Ensemble Confidence",
+    overview: "Structured programming designed to prepare students for school assemblies, seasonal recitals, graduation ceremonies, and community showcases. Covers rehearsal discipline, stage etiquette, teamwork, and performance readiness.",
+    stemFocus: "Spatial spacing, formation transitions, and stage geometry awareness.",
+    selGoals: "Perseverance, stage confidence, teamwork, and pride in shared accomplishments.",
+    sampleUnits: [
+      "Repertoire Rehearsal and Technical Polish",
+      "Stage Directions, Entrances, Exits, and Cue Timing",
+      "Costume and Performance Etiquette Preparation",
+      "Dress Rehearsal and Community Performance"
+    ]
+  },
+  "dance-anatomy": {
+    title: "Dance & Anatomy / Physiology",
+    age: "Grades 3–12 (Ages 8–18)",
+    image: "assets/images/yoga.jpg",
+    tagline: "Movement, Physical Awareness, Alignment & Body Mechanics",
+    overview: "Uses dance movement to introduce students to foundational concepts about the human body. Students learn about major muscle groups, bone alignment, joints, breath, and safe movement mechanics while dancing.",
+    stemFocus: "Basic musculoskeletal anatomy, joint articulation, and safe range of motion.",
+    selGoals: "Body appreciation, injury prevention habits, and mindful physical awareness.",
+    sampleUnits: [
+      "Discovering the Spine, Core, and Postural Alignment",
+      "How Muscles and Joints Create Movement Levers",
+      "Breath Mechanics and Active Warm-Up / Cool-Down Principles",
+      "Safe Landings, Foot Mechanics, and Joint Care"
+    ]
+  },
+  "dance-stem": {
+    title: "Dance & STEM Enrichment",
+    age: "Grades K–8 (Ages 5–14)",
+    image: "assets/images/modern.jpg",
+    tagline: "Integrating Movement with Educational & Scientific Concepts",
+    overview: "Connects foundational academic and STEM concepts with experiential dance learning. Students explore fractions through musical rhythm, geometric shapes through spatial formations, and basic physics principles through movement.",
+    stemFocus: "Geometric formations, symmetry/asymmetry, momentum, and fraction rhythms.",
+    selGoals: "Cross-disciplinary curiosity, collaborative discovery, and experiential learning.",
+    sampleUnits: [
+      "Rhythm Fractions: Whole, Half, Quarter, and Eighth-Note Steps",
+      "Geometry on Stage: Lines, Triangles, Radii, and Tessellations",
+      "Physics in Motion: Force, Gravity, Momentum, and Balance",
+      "Movement Experiments: Translating Science Concepts into Choreography"
     ]
   }
 };
@@ -154,11 +183,19 @@ class CurriculumModalEngine {
       });
     }
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.modal && this.modal.classList.contains('active')) {
+        this.close();
+      }
+    });
+
     // Attach to explore buttons on program cards
     document.querySelectorAll('.btn-explore-curriculum').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const progKey = btn.getAttribute('data-program');
-        this.open(progKey);
+        if (progKey) {
+          this.open(progKey);
+        }
       });
     });
 
@@ -171,9 +208,9 @@ class CurriculumModalEngine {
         const cat = btn.getAttribute('data-cat');
         if (window.videoLightbox) {
           window.videoLightbox.open({
-            title: title + " — Class in Action",
-            category: cat || "Curriculum Preview",
-            desc: "Watch how Phe-be structures pedagogical progressions, inspires student joy, and builds technical mastery.",
+            title: title + " — Program Highlight",
+            category: cat || "Dance Education",
+            desc: "Engaging, age-appropriate dance education designed to build technique, confidence, and creativity.",
             imageSrc: img
           });
         }

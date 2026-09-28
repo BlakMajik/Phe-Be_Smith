@@ -47,11 +47,11 @@ class VideoLightboxEngine {
     if (reelBtn) {
       reelBtn.addEventListener('click', () => {
         this.open({
-          title: "Phe-be Smith: 2026 Teaching & Choreography Showreel",
-          category: "Cinematic Highlight Reel",
-          desc: "A breathtaking compilation of youth workshops, public school arts residencies, Alvin Ailey inspired modern choreography, and youth empowerment performances.",
+          title: "Phe-be Smith | Dance Education & Choreography Showreel",
+          category: "Teaching Artist & Performance Highlight",
+          desc: "Highlights of K–12 classroom dance education, school residencies, student choreography, and youth performances across the Bronx and NYC.",
           imageSrc: "assets/images/hero.jpg",
-          accentColor: "#e5a93b"
+          accentColor: "#ff4757"
         });
       });
     }
