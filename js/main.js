@@ -163,19 +163,57 @@ function initMobileMenu() {
   const menu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  if (toggleBtn && menu) {
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      toggleBtn.textContent = menu.classList.contains('open') ? '✕' : '☰';
-    });
+  if (!toggleBtn || !menu) return;
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-        toggleBtn.textContent = '☰';
-      });
-    });
+  function setMenuState(open) {
+    if (open) {
+      menu.classList.add('open');
+      toggleBtn.classList.add('active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.setAttribute('aria-label', 'Close Navigation Menu');
+      document.body.classList.add('menu-open');
+    } else {
+      menu.classList.remove('open');
+      toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
+      document.body.classList.remove('menu-open');
+    }
   }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains('open');
+    setMenuState(!isOpen);
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setMenuState(false);
+    });
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      setMenuState(false);
+    }
+  });
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      setMenuState(false);
+      toggleBtn.focus();
+    }
+  });
+
+  // Handle resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1080 && menu.classList.contains('open')) {
+      setMenuState(false);
+    }
+  });
 }
 
 /* --------------------------------------------------------------------------

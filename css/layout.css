@@ -365,34 +365,91 @@
   box-shadow: 0 4px 14px var(--glow-coral);
 }
 
-/* Mobile Hamburger */
+/* Mobile Hamburger Button */
 .mobile-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1002;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-subtle);
+}
+
+.mobile-toggle:hover, .mobile-toggle:focus-visible {
+  border-color: var(--accent-coral);
+  background: var(--bg-elevated);
+  outline: none;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-smooth);
+  transform-origin: center;
+}
+
+.mobile-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+  background: var(--accent-coral);
+}
+
+.mobile-toggle.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-toggle.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+  background: var(--accent-coral);
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 @media (max-width: 1080px) {
   .nav-menu {
     position: fixed;
-    top: var(--header-height);
+    top: 88px;
     left: 0;
     width: 100%;
+    height: calc(100vh - 88px);
+    background: var(--bg-primary);
     background: var(--bg-glass-heavy);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
     flex-direction: column;
-    padding: 36px 24px;
-    gap: 24px;
+    align-items: stretch;
+    padding: 24px 20px 48px;
+    gap: 10px;
     border-bottom: 2px solid var(--accent-coral);
-    transform: translateY(-150%);
-    transition: transform var(--transition-smooth);
+    transform: translateY(-120%);
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
     opacity: 0;
     pointer-events: none;
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: var(--shadow-dramatic);
+  }
+  
+  .site-header.scrolled .nav-menu {
+    top: 76px;
+    height: calc(100vh - 76px);
   }
   
   .nav-menu.open {
@@ -401,8 +458,93 @@
     pointer-events: auto;
   }
   
-  .mobile-toggle {
+  .nav-menu .nav-link {
+    font-size: 1.12rem;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
     display: block;
+    color: var(--text-primary);
+    background: var(--bg-glass-card);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-fast);
+  }
+
+  .nav-menu .nav-link:hover, .nav-menu .nav-link.active {
+    background: var(--bg-elevated);
+    border-color: var(--border-glass);
+    color: var(--accent-coral);
+  }
+  
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    height: 76px;
+  }
+  .site-header.scrolled {
+    height: 68px;
+  }
+  .site-header .nav-menu {
+    top: 76px;
+    height: calc(100vh - 76px);
+  }
+  .site-header.scrolled .nav-menu {
+    top: 68px;
+    height: calc(100vh - 68px);
+  }
+  .brand-symbol {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .brand-name {
+    font-size: 1.05rem;
+  }
+  .brand-tagline {
+    font-size: 0.62rem;
+  }
+  .header-cta {
+    padding: 8px 13px;
+    font-size: 0.8rem;
+  }
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-container {
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .brand-logo {
+    gap: 8px;
+  }
+  .brand-symbol {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+  .brand-name {
+    font-size: 0.95rem;
+  }
+  .brand-tagline {
+    font-size: 0.58rem;
+  }
+  .header-cta {
+    padding: 7px 10px;
+    font-size: 0.75rem;
+  }
+  .mobile-toggle {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
   }
 }
 
