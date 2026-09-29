@@ -56,29 +56,40 @@
       </a>
 
       <!-- Desktop & Mobile Navigation Menu -->
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#programs" class="nav-link">Programs</a></li>
-          <li><a href="#grade-levels" class="nav-link">Grade Levels</a></li>
-          <li><a href="#teaching-approach" class="nav-link">Teaching Approach</a></li>
-          <li><a href="#program-formats" class="nav-link">Program Formats</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#youth-development" class="nav-link">Values</a></li>
-        </ul>
+      <nav class="nav-wrapper" aria-label="Main Navigation">
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-links-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#programs" class="nav-link">Programs</a></li>
+            <li><a href="#grade-levels" class="nav-link">Grade Levels</a></li>
+            <li><a href="#teaching-approach" class="nav-link">Teaching Approach</a></li>
+            <li><a href="#program-formats" class="nav-link">Program Formats</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#youth-development" class="nav-link">Values</a></li>
+            <li><a href="#contact" class="nav-link nav-link-contact">Contact Me</a></li>
+          </ul>
+
+          <!-- Mobile Drawer Secondary Utility Area (Hidden on Desktop) -->
+          <div class="nav-drawer-utility">
+            <span class="nav-utility-label">UTILITY</span>
+            <button class="drawer-theme-toggle" id="drawer-theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+              <span id="drawer-theme-icon">🌙</span>
+            </button>
+          </div>
+        </div>
       </nav>
 
-      <!-- Action Utilities -->
+      <!-- Action Utilities (Desktop Header Controls & Mobile Hamburger) -->
       <div class="nav-actions">
-        <!-- Dark / Light Mode Switcher -->
+        <!-- Dark / Light Mode Switcher (Desktop Header) -->
         <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
           <span id="theme-icon">🌙</span>
         </button>
 
-        <!-- Primary Header CTA -->
+        <!-- Primary Header CTA (Desktop Header) -->
         <a href="#contact" class="btn btn-primary btn-sm header-cta" aria-label="Contact Me">Contact Me</a>
 
-        <!-- Mobile Hamburger Button -->
+        <!-- Mobile Hamburger Button (Priority Functional Component) -->
         <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -134,26 +145,6 @@
           <span class="hero-sub-divider">•</span>
           <a href="#about" class="hero-sub-link">Meet Phe-be ↓</a>
         </div>
-
-        <!-- Kinetic Highlights Bar -->
-        <div class="hero-stats-bar" id="hero-stats-bar">
-          <div class="stat-item">
-            <div class="stat-num" data-target="11" data-suffix="+">11+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">Pre-K–12</div>
-            <div class="stat-label">Ages 2–18 Served</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">Bronx, NY</div>
-            <div class="stat-label">Based in New York City</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num" data-target="10" data-suffix="+">10+</div>
-            <div class="stat-label">Dance Disciplines</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -162,24 +153,35 @@
          ======================================================================= -->
     <section class="section" id="about">
       <div class="container">
+        <!-- Eyebrow Tag positioned above the portrait photograph -->
+        <div class="about-eyebrow-wrap">
+          <span class="section-tag">About Phe-be</span>
+        </div>
+
         <div class="about-grid">
-          <div class="about-image-wrap">
-            <img src="assets/images/portrait.jpg" alt="Portrait of Phe-be Smith, dance educator" class="about-portrait-img">
-            <div class="about-floating-quote">
-              <p class="about-quote-text">"Dance encourages young people to build confidence, discover their creativity, and express themselves with pride."</p>
-              <span class="about-quote-author">— Phe-be Smith, Dance Teaching Artist</span>
+          <!-- Visual Column: Portrait Photograph + Editorial Quote Below -->
+          <div class="about-visual-col">
+            <div class="about-portrait-wrap">
+              <img src="assets/images/portrait.jpg" alt="Portrait of Phe-be Smith, dance educator" class="about-portrait-img">
+            </div>
+            <!-- Quote completely outside and below the portrait photograph -->
+            <div class="about-editorial-quote">
+              <blockquote class="about-quote-text">
+                "Dance encourages young people to build confidence, discover their creativity, and express themselves with pride."
+              </blockquote>
+              <cite class="about-quote-attribution">— Phe-be</cite>
             </div>
           </div>
 
-          <div class="about-content">
-            <span class="section-tag">About Phe-be</span>
+          <!-- Content Column: Heading, Copy & 4 Core Pillars -->
+          <div class="about-content-col">
             <h2 class="section-title">Grounded in Movement, <span class="gradient-text-gold">Dedicated to Youth</span></h2>
             
-            <p style="font-size: 1.08rem; color: var(--text-primary); line-height: 1.75; margin-bottom: 20px; font-weight: 600;">
+            <p class="about-lead-p">
               Phe-be Smith is a Bronx-based dance educator and teaching artist with 11+ years of experience teaching children and youth from early childhood through high school. Her experience includes dance education in school and community settings, choreography, performance preparation, and youth development.
             </p>
             
-            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 28px;">
+            <p class="about-body-p">
               Phe-be creates engaging, age-appropriate dance experiences that encourage creativity, confidence, discipline, collaboration, physical awareness, and self-expression while providing students with a strong foundation in movement and dance technique.
             </p>
 
@@ -227,12 +229,22 @@
           </p>
         </div>
 
-        <div class="grid grid-3" id="programs-grid">
-          <!-- Program 1: Creative Movement -->
+        <p class="programs-intro-note">
+          Programming can be adapted to student age, experience level, program goals, and available instructional time.
+        </p>
+
+        <!-- Category 1: Dance Styles & Movement -->
+        <div class="programs-category-header">
+          <h3 class="programs-category-title">Dance Styles & Movement</h3>
+          <div class="programs-category-line"></div>
+        </div>
+
+        <div class="grid grid-3" id="programs-dance-styles-grid">
+          <!-- 1. Creative Movement & Early Childhood Dance -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/earlychildhood.jpg" alt="Creative Movement and Early Childhood Dance" class="program-img">
-              <span class="program-age-tag">Ages 2 – 7 • Pre-K–2</span>
+              <img src="assets/images/earlychildhood.jpg" alt="Creative Movement & Early Childhood Dance" class="program-img">
+              <span class="program-age-tag">Ages 2–7 • Pre-K–Grade 2</span>
             </div>
             <div class="program-body">
               <h3 class="program-title">Creative Movement & Early Childhood Dance</h3>
@@ -248,10 +260,10 @@
             </div>
           </div>
 
-          <!-- Program 2: Ballet -->
+          <!-- 2. Ballet -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/ballet.jpg" alt="Ballet Dance Class" class="program-img">
+              <img src="assets/images/ballet.jpg" alt="Ballet Dance Instruction" class="program-img">
               <span class="program-age-tag">Grades K–12 • Beginner–Intermediate</span>
             </div>
             <div class="program-body">
@@ -268,15 +280,15 @@
             </div>
           </div>
 
-          <!-- Program 3: Hip-Hop -->
+          <!-- 3. Hip-Hop -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/hiphop.jpg" alt="Hip Hop Dance Class" class="program-img">
+              <img src="assets/images/hiphop.jpg" alt="Hip-Hop Dance Class" class="program-img">
               <span class="program-age-tag">Grades 3–12 • Beginner–Intermediate</span>
             </div>
             <div class="program-body">
               <h3 class="program-title">Hip-Hop</h3>
-              <p class="program-desc">Rhythm, musicality, foundational hip-hop movement, choreography, creativity, and performance.</p>
+              <p class="program-desc">Rhythm, musicality, foundational movement, choreography, creativity, and performance.</p>
               <div class="program-tags">
                 <span class="program-tag">Rhythm & Grooves</span>
                 <span class="program-tag">Choreography</span>
@@ -288,10 +300,10 @@
             </div>
           </div>
 
-          <!-- Program 4: Jazz & Street Jazz -->
+          <!-- 4. Jazz & Street Jazz -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/teaching.jpg" alt="Jazz and Street Jazz Dance" class="program-img">
+              <img src="assets/images/teaching.jpg" alt="Jazz & Street Jazz Dance" class="program-img">
               <span class="program-age-tag">Grades 3–12 • Beginner–Intermediate</span>
             </div>
             <div class="program-body">
@@ -308,7 +320,27 @@
             </div>
           </div>
 
-          <!-- Program 5: Funk-Based Dance Styles -->
+          <!-- 5. Contemporary & Modern -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/modern.jpg" alt="Contemporary & Modern Dance" class="program-img">
+              <span class="program-age-tag">Grades 6–12 • Beginner–Intermediate</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Contemporary & Modern</h3>
+              <p class="program-desc">Technique, musicality, movement exploration, expressive movement, choreography, and creative expression.</p>
+              <div class="program-tags">
+                <span class="program-tag">Floorwork</span>
+                <span class="program-tag">Phrasing</span>
+                <span class="program-tag">Expression</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="contemporary-modern">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Funk-Based Dance Styles -->
           <div class="program-card">
             <div class="program-media">
               <img src="assets/images/hiphop_street_jazz_1788625331578.jpg" alt="Funk-Based Dance Styles" class="program-img">
@@ -328,7 +360,7 @@
             </div>
           </div>
 
-          <!-- Program 6: Step Dance -->
+          <!-- 7. Step Dance -->
           <div class="program-card">
             <div class="program-media">
               <img src="assets/images/steptap.jpg" alt="Step Dance Ensemble" class="program-img">
@@ -339,7 +371,7 @@
               <p class="program-desc">Rhythm, coordination, teamwork, musicality, and performance.</p>
               <div class="program-tags">
                 <span class="program-tag">Team Unity</span>
-                <span class="program-tag">Percussion</span>
+                <span class="program-tag">Body Percussion</span>
                 <span class="program-tag">Coordination</span>
               </div>
               <div class="program-btn-row">
@@ -348,7 +380,135 @@
             </div>
           </div>
 
-          <!-- Program 7: Choreography & Dance Composition -->
+          <!-- 8. Tap -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/step_tap_percussion_1788625372793.jpg" alt="Tap Dance Class" class="program-img">
+              <span class="program-age-tag">Grades K–12 • Beginner–Intermediate</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Tap</h3>
+              <p class="program-desc">Rhythm, timing, coordination, musicality, foundational tap vocabulary, and movement sequencing.</p>
+              <div class="program-tags">
+                <span class="program-tag">Rhythm</span>
+                <span class="program-tag">Timing</span>
+                <span class="program-tag">Tap Vocabulary</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="tap">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Salsa -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/teaching_youth_joy_1788625318734.jpg" alt="Salsa Dance Instruction" class="program-img">
+              <span class="program-age-tag">Grades 6–12 • Beginner–Intermediate</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Salsa</h3>
+              <p class="program-desc">Rhythm, musicality, coordination, foundational movement patterns, and cultural dance exploration.</p>
+              <div class="program-tags">
+                <span class="program-tag">Rhythm</span>
+                <span class="program-tag">Footwork Patterns</span>
+                <span class="program-tag">Cultural Dance</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="salsa">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Yoga & Movement -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/yoga.jpg" alt="Yoga & Movement Education" class="program-img">
+              <span class="program-age-tag">Grades K–12 • All Levels</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Yoga & Movement</h3>
+              <p class="program-desc">Age-appropriate flexibility, balance, coordination, body awareness, controlled movement, and physical awareness.</p>
+              <div class="program-tags">
+                <span class="program-tag">Flexibility</span>
+                <span class="program-tag">Balance</span>
+                <span class="program-tag">Mindful Movement</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="yoga-movement">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Tumbling & Aerobics -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/early_childhood_movement_1788625465888.jpg" alt="Tumbling & Aerobics" class="program-img">
+              <span class="program-age-tag">Pre-K–Grade 5 • Beginner</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Tumbling & Aerobics</h3>
+              <p class="program-desc">Beginner-level tumbling, coordination, movement, physical activity, and body awareness appropriate to developmental level.</p>
+              <div class="program-tags">
+                <span class="program-tag">Tumbling Basics</span>
+                <span class="program-tag">Coordination</span>
+                <span class="program-tag">Motor Agility</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="tumbling-aerobics">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. Liturgical / Praise / Flags -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/liturgical.jpg" alt="Liturgical, Praise and Flags Dance" class="program-img">
+              <span class="program-age-tag">All Ages • Faith & Community Programs</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">Liturgical / Praise / Flags</h3>
+              <p class="program-desc">Movement and choreography incorporating liturgical/praise dance and flags where appropriate to the program or organization.</p>
+              <div class="program-tags">
+                <span class="program-tag">Sacred Movement</span>
+                <span class="program-tag">Flag Banners</span>
+                <span class="program-tag">Storytelling</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="liturgical-praise-flags">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13. West African Dance -->
+          <div class="program-card">
+            <div class="program-media">
+              <img src="assets/images/community.jpg" alt="West African Dance" class="program-img">
+              <span class="program-age-tag">Grades K–12 • All Levels</span>
+            </div>
+            <div class="program-body">
+              <h3 class="program-title">West African Dance</h3>
+              <p class="program-desc">Foundational movement, rhythm, musicality, cultural exploration, and expressive movement.</p>
+              <div class="program-tags">
+                <span class="program-tag">Cultural Exploration</span>
+                <span class="program-tag">Polyrhythms</span>
+                <span class="program-tag">Grounded Movement</span>
+              </div>
+              <div class="program-btn-row">
+                <button class="btn-explore-curriculum" data-program="west-african-dance">View Syllabus Details →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Education & Performance Programs -->
+        <div class="programs-category-header edu">
+          <h3 class="programs-category-title">Education & Performance Programs</h3>
+          <div class="programs-category-line"></div>
+        </div>
+
+        <div class="grid grid-3" id="programs-edu-grid">
+          <!-- 1. Choreography & Dance Composition -->
           <div class="program-card">
             <div class="program-media">
               <img src="assets/images/rehearsal.jpg" alt="Choreography and Dance Composition" class="program-img">
@@ -368,10 +528,10 @@
             </div>
           </div>
 
-          <!-- Program 8: Performance & Recital Preparation -->
+          <!-- 2. Dance Performance & Recital Preparation -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/modern.jpg" alt="Dance Performance and Recital Preparation" class="program-img">
+              <img src="assets/images/modern_contemporary_stage_1788625344881.jpg" alt="Dance Performance and Recital Preparation" class="program-img">
               <span class="program-age-tag">Pre-K–12 Assemblies & Recitals</span>
             </div>
             <div class="program-body">
@@ -388,10 +548,10 @@
             </div>
           </div>
 
-          <!-- Program 9: Dance & Anatomy/Physiology -->
+          <!-- 3. Dance & Anatomy / Physiology -->
           <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/yoga.jpg" alt="Dance and Anatomy Education" class="program-img">
+              <img src="assets/images/yoga_somatic_dance_1788625483250.jpg" alt="Dance and Anatomy Education" class="program-img">
               <span class="program-age-tag">Grades 3–12</span>
             </div>
             <div class="program-body">
@@ -408,10 +568,10 @@
             </div>
           </div>
 
-          <!-- Program 10: Dance & STEM Enrichment -->
-          <div class="program-card" style="grid-column: span 1;">
+          <!-- 4. Dance & STEM Enrichment -->
+          <div class="program-card">
             <div class="program-media">
-              <img src="assets/images/community.jpg" alt="Dance and STEM Enrichment" class="program-img">
+              <img src="assets/images/community_school_residency_1788625406691.jpg" alt="Dance and STEM Enrichment" class="program-img">
               <span class="program-age-tag">Grades K–8</span>
             </div>
             <div class="program-body">
@@ -902,54 +1062,13 @@
             </div>
           </div>
         </div>
-
-        <!-- Teaching Organizations Experience -->
-        <div class="teaching-orgs-box">
-          <h3 class="teaching-orgs-title">Documented Teaching Artist Experience</h3>
-          <div class="teaching-orgs-grid">
-            <div class="teaching-org-card">
-              <span class="org-bullet">✦</span>
-              <span>Innerforce Early Childhood Learning Center</span>
-            </div>
-            <div class="teaching-org-card">
-              <span class="org-bullet">✦</span>
-              <span>Purelements A.I.R.E Program</span>
-            </div>
-            <div class="teaching-org-card">
-              <span class="org-bullet">✦</span>
-              <span>Ifetayo Cultural Arts Facility</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dance Disciplines Covered (Beginner–Intermediate Level) -->
-        <div style="margin-top: 28px;">
-          <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 14px;">
-            Documented Dance Disciplines (Beginner–Intermediate Level)
-          </h3>
-          <div class="disciplines-cloud">
-            <span class="discipline-badge">Ballet</span>
-            <span class="discipline-badge">Creative Movement</span>
-            <span class="discipline-badge">Contemporary</span>
-            <span class="discipline-badge">Street Jazz</span>
-            <span class="discipline-badge">Hip-Hop</span>
-            <span class="discipline-badge">Hip-Hop Funk / Illusion Styles</span>
-            <span class="discipline-badge">Modern</span>
-            <span class="discipline-badge">Salsa</span>
-            <span class="discipline-badge">Step Dance</span>
-            <span class="discipline-badge">Tap</span>
-            <span class="discipline-badge">Yoga</span>
-            <span class="discipline-badge">Beginner Tumbling / Aerobics</span>
-            <span class="discipline-badge">Liturgical / Praise / Flags</span>
-            <span class="discipline-badge">West African Dance</span>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         CHOREOGRAPHY & PERFORMANCE EXPERIENCE
+         CHOREOGRAPHY & PERFORMANCE EXPERIENCE (Commented out — services preserved under Programs)
          ======================================================================= -->
+    <!--
     <section class="section" id="choreography">
       <div class="container">
         <div class="section-header">
@@ -961,7 +1080,6 @@
         </div>
 
         <div class="repertoire-grid">
-          <!-- Item 1 -->
           <div class="repertoire-card" data-title="Modern & Contemporary Choreography" data-premiere="Performance & Rehearsal Archive" data-synopsis="Contemporary and modern ensemble choreography highlighting fluid lines, floorwork transitions, and expressive storytelling.">
             <div class="repertoire-media">
               <img src="assets/images/modern.jpg" alt="Modern dance rehearsal" class="repertoire-img">
@@ -979,7 +1097,6 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
           <div class="repertoire-card" data-title="Hip-Hop & Street Jazz Choreography" data-premiere="Performance & Rehearsal Archive" data-synopsis="High-energy hip-hop and street jazz choreography emphasizing syncopated footwork, isolations, and ensemble staging.">
             <div class="repertoire-media">
               <img src="assets/images/hiphop.jpg" alt="Hip-Hop dance choreography" class="repertoire-img">
@@ -997,7 +1114,6 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
           <div class="repertoire-card" data-title="Step & Percussive Dance Staging" data-premiere="Performance & Rehearsal Archive" data-synopsis="Acoustic step dance choreography transforming movement into intricate rhythmic percussion and synchronized formations.">
             <div class="repertoire-media">
               <img src="assets/images/steptap.jpg" alt="Step and percussive dance" class="repertoire-img">
@@ -1015,7 +1131,6 @@
             </div>
           </div>
 
-          <!-- Item 4 -->
           <div class="repertoire-card" data-title="Liturgical & Sacred Dance Ministry" data-premiere="Performance & Ministry Archive" data-synopsis="Devotional choreography utilizing expressive contemporary movement, flowing banners, and scriptural storytelling.">
             <div class="repertoire-media">
               <img src="assets/images/liturgical.jpg" alt="Liturgical and sacred dance" class="repertoire-img">
@@ -1035,6 +1150,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- =======================================================================
          MEDIA GALLERY HUB (Disabled for site cleanup - markup preserved)
@@ -1080,7 +1196,7 @@
     <!-- =======================================================================
          YOUTH DEVELOPMENT & CORE VALUES
          ======================================================================= -->
-    <section class="section" id="youth-development" style="background: var(--bg-secondary);">
+    <section class="section" id="youth-development">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Youth Development</span>

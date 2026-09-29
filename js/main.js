@@ -18,28 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
    THEME TOGGLING (LIGHT VIBRANT DEFAULT / ELECTRIC STAGE DARK)
    -------------------------------------------------------------------------- */
 function initTheme() {
-  const toggleBtn = document.getElementById('theme-toggle-btn');
+  const toggleBtns = document.querySelectorAll('#theme-toggle-btn, #drawer-theme-toggle-btn');
   const savedTheme = localStorage.getItem('phebe-theme') || 'light';
 
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'light';
       const nextTheme = current === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', nextTheme);
       localStorage.setItem('phebe-theme', nextTheme);
       updateThemeIcon(nextTheme);
     });
-  }
+  });
 }
 
 function updateThemeIcon(theme) {
-  const icon = document.getElementById('theme-icon');
-  if (icon) {
+  const icons = document.querySelectorAll('#theme-icon, #drawer-theme-icon, .drawer-theme-icon');
+  icons.forEach(icon => {
     icon.textContent = theme === 'light' ? '🌙' : '☀️';
-  }
+  });
 }
 
 /* --------------------------------------------------------------------------

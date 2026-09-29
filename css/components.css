@@ -272,87 +272,24 @@
 /* --------------------------------------------------------------------------
    ABOUT SECTION & 4 PILLARS OF EMPOWERMENT
    -------------------------------------------------------------------------- */
+.about-eyebrow-wrap {
+  margin-bottom: 24px;
+}
+
 .about-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: start;
 }
 
-@media (max-width: 980px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .about-image-wrap {
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-    border: none;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .about-portrait-img {
-    width: 100%;
-    height: 380px;
-    max-height: 52vh;
-    object-fit: cover;
-    object-position: center 15%;
-    border-radius: var(--radius-xl);
-    border: 3px solid transparent;
-    background: var(--grad-sunset) border-box;
-    box-shadow: var(--shadow-dramatic);
-    display: block;
-  }
-
-  .about-floating-quote {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    margin-top: 16px;
-    width: 100%;
-    padding: 20px 22px;
-    background: var(--bg-glass-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 2px solid var(--border-glass);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .about-quote-text {
-    font-size: 1.02rem;
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-
-  .about-quote-author {
-    font-size: 0.78rem;
-  }
+.about-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@media (max-width: 480px) {
-  .about-portrait-img {
-    height: 320px;
-    max-height: 48vh;
-    border-radius: var(--radius-lg);
-  }
-  .about-floating-quote {
-    padding: 16px 18px;
-    margin-top: 12px;
-  }
-  .about-quote-text {
-    font-size: 0.95rem;
-    line-height: 1.48;
-  }
-}
-
-.about-image-wrap {
+.about-portrait-wrap {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -363,47 +300,109 @@
 
 .about-portrait-img {
   width: 100%;
-  height: 100%;
+  height: 440px;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
   transition: transform var(--transition-slow);
 }
 
-.about-image-wrap:hover .about-portrait-img {
-  transform: scale(1.04);
+.about-portrait-wrap:hover .about-portrait-img {
+  transform: scale(1.03);
 }
 
-.about-floating-quote {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
-  padding: 24px;
-  background: var(--bg-glass-heavy);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 2px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+.about-editorial-quote {
+  padding: 20px 24px;
+  background: var(--bg-glass-card);
+  border-left: 3px solid var(--accent-coral);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: var(--shadow-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .about-quote-text {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
   color: var(--text-primary);
   line-height: 1.55;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
   font-weight: 600;
 }
 
-.about-quote-author {
+.about-quote-attribution {
   font-family: var(--font-sans);
-  font-size: 0.825rem;
+  font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent-coral);
+  display: block;
+  font-style: normal;
+}
+
+.about-content-col .section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-lead-p {
+  font-size: 1.08rem;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about-body-p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 980px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-portrait-img {
+    height: 360px;
+    max-height: 50vh;
+  }
+
+  .about-editorial-quote {
+    padding: 18px 20px;
+  }
+
+  .about-quote-text {
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .about-quote-attribution {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-portrait-img {
+    height: 300px;
+    max-height: 45vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .about-editorial-quote {
+    padding: 16px 18px;
+  }
+
+  .about-quote-text {
+    font-size: 1.02rem;
+    line-height: 1.48;
+  }
 }
 
 .pillars-grid {
@@ -466,6 +465,50 @@
   font-size: 0.925rem;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAM CATEGORIES & INTRO NOTE
+   -------------------------------------------------------------------------- */
+.programs-intro-note {
+  max-width: 820px;
+  margin: -30px auto 44px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.programs-category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.programs-category-header:first-of-type {
+  margin-top: 10px;
+}
+
+.programs-category-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.programs-category-line {
+  height: 2px;
+  flex-grow: 1;
+  background: linear-gradient(to right, var(--accent-coral), transparent);
+  border-radius: 2px;
+}
+
+.programs-category-header.edu .programs-category-line {
+  background: linear-gradient(to right, var(--accent-purple), transparent);
 }
 
 /* --------------------------------------------------------------------------
